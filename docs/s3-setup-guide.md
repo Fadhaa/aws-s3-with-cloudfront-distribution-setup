@@ -16,7 +16,7 @@ This guide walks you through setting up an Amazon S3 bucket directly from the AW
 ### 1️⃣ Create an S3 Bucket
 
 1. Log in to the [AWS Console](https://console.aws.amazon.com/).
-2. Navigate to **S3** under "Storage".
+2. Navigate to **S3** .
 3. Click **Create bucket**.
 4. Fill in:
    - **Bucket name** (must be globally unique)
@@ -36,18 +36,7 @@ This guide walks you through setting up an Amazon S3 bucket directly from the AW
 
 ---
 
-### 3️⃣ Enable Default Encryption
-
-1. In the same **Properties** tab, scroll to **Default encryption**.
-2. Click **Edit**.
-3. Select:
-   - **Enable**
-   - Choose **Amazon S3 managed keys (SSE-S3)** (or SSE-KMS for more control).
-4. Click **Save changes**.
-
----
-
-### 4️⃣ Add Lifecycle Rules (e.g., archive to Glacier)
+### 3️⃣ Add Lifecycle Rules (e.g., archive to Glacier)
 
 1. Go to the **Management** tab.
 2. Click **Create lifecycle rule**.
@@ -55,13 +44,15 @@ This guide walks you through setting up an Amazon S3 bucket directly from the AW
 4. Choose:
    - **This rule applies to all objects in the bucket**
    - Or limit by prefix/tag
+5. Under **Lifecycle rule actions** choose
+   - Transition current versions of objects between storage classes
 5. Under **Transitions**, add:
    - Move current versions to **Glacier Instant Retrieval** after **30 days**
 6. Click **Create rule**.
 
 ---
 
-### 5️⃣ (Optional) Enable Static Website Hosting
+### 4️⃣ (Optional) Enable Static Website Hosting
 
 1. Go to the **Properties** tab.
 2. Scroll to **Static website hosting**.
@@ -73,7 +64,7 @@ This guide walks you through setting up an Amazon S3 bucket directly from the AW
 
 ---
 
-### 6️⃣ (Optional) Modify Public Access Settings
+### 5️⃣ (Optional) Modify Public Access Settings
 
 > ⚠️ Only do this if you are hosting a public website.
 
@@ -85,7 +76,7 @@ This guide walks you through setting up an Amazon S3 bucket directly from the AW
 
 ---
 
-### 7️⃣ (Optional) Attach a Bucket Policy
+### 6️⃣ (Optional) Attach a Bucket Policy
 
 If making the bucket public, attach a public-read policy:
 
