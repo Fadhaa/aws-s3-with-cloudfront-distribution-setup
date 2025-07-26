@@ -26,6 +26,7 @@ This guide walks you through setting up an Amazon S3 bucket directly from the AW
    
 6. Leave "Object Ownership" as **ACLs disabled** (recommended).
 7. Under **Block Public Access**, deselect **Block all public access** then tick "I acknowledge that the current settings might result in this bucket and the objects within becoming public" to enable static website hosting.
+   > ⚠️ Only do this if you are hosting a public website.
 8. Under **Bucket Versioning** keep it disabled for now. leave all other settings as default.
 9. Click **Create bucket**.
 
@@ -43,7 +44,8 @@ This guide walks you through setting up an Amazon S3 bucket directly from the AW
 
 
 
-### 3️⃣ Add Permissions
+### 3️⃣ Go to **Permissions**
+- to attach a Bucket Policy
 
 1. Under **Bucket policy** click **Edit**
    - Copy the following policy and paste it in the box
@@ -66,46 +68,4 @@ This guide walks you through setting up an Amazon S3 bucket directly from the AW
 2. click on **Save Changes**
 
 
----
 
-### 4️⃣ (Optional) Enable Static Website Hosting
-
-1. Go to the **Properties** tab.
-2. Scroll to **Static website hosting**.
-3. Click **Edit**.
-4. Enable it and set:
-   - **Index document**: `index.html`
-   - (Optional) **Error document**: `error.html`
-5. Save changes.
-
----
-
-### 5️⃣ (Optional) Modify Public Access Settings
-
-> ⚠️ Only do this if you are hosting a public website.
-
-1. From the **Permissions** tab:
-2. Scroll to **Block public access**.
-3. Click **Edit**.
-4. Uncheck the blocking options as needed.
-5. Confirm by typing **confirm** and save.
-
----
-
-### 6️⃣ (Optional) Attach a Bucket Policy
-
-If making the bucket public, attach a public-read policy:
-
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "AllowPublicRead",
-      "Effect": "Allow",
-      "Principal": "*",
-      "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::your-bucket-name/*"
-    }
-  ]
-}
