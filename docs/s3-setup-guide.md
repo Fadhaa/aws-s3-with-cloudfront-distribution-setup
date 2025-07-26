@@ -42,7 +42,7 @@ This guide walks you through setting up an Amazon S3 bucket directly from the AW
    - Leave all outher settings as default
 3. click **Save changes**
 
-
+---
 
 ### 3️⃣ Go to **Permissions**
 - to attach a Bucket Policy
@@ -67,5 +67,14 @@ This guide walks you through setting up an Amazon S3 bucket directly from the AW
 
 2. click on **Save Changes**
 
+---
+
+### 3️⃣ Go to **Objects**
+1. Click **Upload**
+2. Click **Add files**
+3. Choose the files **index.html** and **error.html** from your directory
+4. Click **Upload**
+
+   
 
 
