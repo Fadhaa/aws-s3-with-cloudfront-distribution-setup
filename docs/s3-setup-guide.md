@@ -1,4 +1,4 @@
-# 📦 AWS S3 Setup Guide (Console-Based)
+# 📦 AWS S3 Setup Guide (Console-Based)-Updated 26 July 2025
 
 This guide walks you through setting up an Amazon S3 bucket directly from the AWS Management Console — without using the CLI or scripts.
 
@@ -19,36 +19,50 @@ This guide walks you through setting up an Amazon S3 bucket directly from the AW
 2. Navigate to **S3** .
 3. Click **Create bucket**.
 4. Fill in:
-   - **Bucket name** (must be globally unique)
    - **AWS Region** (choose closest to your target audience)
-5. Leave "Object Ownership" as **ACLs disabled** (recommended).
-6. Under **Block Public Access**, keep all boxes checked unless hosting a static website.
-7. Click **Create bucket**.
+   - **Bucket type** (choose General purpose)
+   - **Bucket name** (must be globally unique). In this example, let's choose **statsolve.click**
+5. If you have previous bucket, you can Copy settings from existing bucket - optional. otherwise continue to set new one
+   
+6. Leave "Object Ownership" as **ACLs disabled** (recommended).
+7. Under **Block Public Access**, deselect **Block all public access** then tick "I acknowledge that the current settings might result in this bucket and the objects within becoming public" to enable static website hosting.
+8. Under **Bucket Versioning** keep it disabled for now. leave all other settings as default.
+9. Click **Create bucket**.
 
 ---
 
-### 2️⃣ Enable Bucket Versioning (for backups & recovery)
+### 2️⃣ Go to Amazon S3> Buckets and click on your bucket name. In this example **statsolve.click**
 
-1. Go to your new bucket.
-2. Click the **Properties** tab.
-3. Scroll down to **Bucket Versioning**.
-4. Click **Edit**, select **Enable**, and click **Save changes**.
+1. Go to the **Properties** tab.
+2. Under **Static website hosting** click **Edit**
+   - under **Static website hosting** select **Enable**
+   - under **Index document** enter **index.html**
+   - under **Error document - optional** enter **error.html**
+   - Leave all outher settings as default
+3. click **Save changes**
 
----
 
-### 3️⃣ Add Lifecycle Rules (e.g., archive to Glacier)
 
-1. Go to the **Management** tab.
-2. Click **Create lifecycle rule**.
-3. Name your rule (e.g., `ArchiveAfter30Days`).
-4. Choose:
-   - **This rule applies to all objects in the bucket**
-   - Or limit by prefix/tag
-5. Under **Lifecycle rule actions** choose
-   - Transition current versions of objects between storage classes
-5. Under **Transitions**, add:
-   - Move current versions to **Glacier Instant Retrieval** after **30 days**
-6. Click **Create rule**.
+### 3️⃣ Add Permissions
+
+1. Under **Bucket policy** click **Edit**
+   - Copy the following policy and paste it in the box
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::statsolve.click/*"
+        }
+    ]
+}
+
+2. click on **Save Changes**
+
 
 ---
 
