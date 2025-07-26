@@ -22,23 +22,26 @@ Make sure:
 - **Static website hosting is enabled**
 - Your files (e.g., `index.html`) are **publicly readable**
 - You can access the **S3 Website Endpoint** (e.g., `http://YOUR-Bucket-NAME.s3-website-us-east-1.amazonaws.com`)
-- In my example the **YOUR-Bucket-NAME** is **statsolve-s3**
+- In my example the **YOUR-Bucket-NAME** is **statsolve.click**
 
 ---
 
 ### 2️⃣ Create a CloudFront Distribution
 
 1. Go to **CloudFront** → Click **Create Distribution**
-2. In the **Origin Settings**:
-   - **Origin domain**: Choose your S3 **website endpoint** (⚠️ ends with `.amazonaws.com`, not the bucket name)
-   - Set **Origin access** to `Public` (since website endpoint doesn't support OAC)
-3. Under **Default cache behavior**:
-   - Viewer Protocol Policy: `Redirect HTTP to HTTPS` ✅
-   - Allowed HTTP methods: `GET, HEAD` (default)
-4. Under **Settings**:
-   - Provide a name (e.g., `statsolve-s3-cdn`)
-   - (Optional) Add a **custom domain** and SSL (see below)
-5. Click **Create Distribution**
+2. In the **Distribution Name** choose **statsolvedist** or any name. And then click **Next**
+3. Under **Origin type** choose **Amazon S3**
+4. Under **Origin** for **S3 Origin**, enter **statsolve.click.s3-website-us-east-1.amazonaws.com**.
+5. Leave the other settings as default, and click **Next**
+6. In **Enable security**, select **Enable security protections**
+7. Skip everything else and click **Create distribution**
+8. After creating the distribution **statsolvedist**
+9. Under General (settings), click **Edit**
+10. Under **Domains** enter your domain name. In this example my domain is **mystatsolve.click** and click next
+11. Choose your **TLS certificate **. If you have not created one yet, go to **AWS ACM** and create one for your domain. Make sure you publish cname record in your route 53.
+12. In **Default root object - optional** enter **index.html**
+13. After choosing your TLS, click **Next** and then **Add Domains**
+
 
 ---
 
