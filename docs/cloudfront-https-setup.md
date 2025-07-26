@@ -41,25 +41,12 @@ Make sure:
 11. Choose your **TLS certificate **. If you have not created one yet, go to **AWS ACM** and create one for your domain. Make sure you publish cname record in your route 53.
 12. In **Default root object - optional** enter **index.html**
 13. After choosing your TLS, click **Next** and then **Add Domains**
-
-
----
-
-### 3️⃣ (Optional) Connect a Custom Domain
-
-To serve via `www.statsolve.com` or similar:
-
-1. Go to **Route 53** (or your domain registrar)
-2. Create a **CNAME** or **A record (alias)** pointing to your CloudFront domain name
-3. Add the domain name in your CloudFront distribution settings
-4. Use **ACM (AWS Certificate Manager)** to:
-   - Request a certificate for `www.statsolve.com`
-   - Validate via DNS
-   - Attach the certificate in CloudFront → **SSL/TLS Settings**
+14. In **General** tap of your distribution and under **Settings**, click **Route domains to CloudFront**
+15. You need to **Set up DNS routing**. just click on **Set up routing automatically** to add two records in your route 53.
 
 ---
 
-### 4️⃣ Test the HTTPS Site
+### 3️⃣ Test the HTTPS Site
 
 Once your distribution status = **Deployed**, open the CloudFront domain: 
 
