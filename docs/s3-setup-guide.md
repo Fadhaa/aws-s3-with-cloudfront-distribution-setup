@@ -74,7 +74,7 @@ This guide walks you through setting up an Amazon S3 bucket directly from the AW
 2. Click **Add files**
 3. Choose the files **index.html** and **error.html** from your directory
 4. Click **Upload**
+   - You can use the index, error files in the **main/scripts** in this repo.
 
-   
 
 
