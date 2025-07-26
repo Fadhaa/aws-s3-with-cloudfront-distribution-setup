@@ -23,6 +23,21 @@ Make sure:
 - Your files (e.g., `index.html`) are **publicly readable**
 - You can access the **S3 Website Endpoint** (e.g., `http://YOUR-Bucket-NAME.s3-website-us-east-1.amazonaws.com`)
 - In my example the **YOUR-Bucket-NAME** is **statsolve.click**
+- For setting S3 bucket, follow this guidance (https://github.com/Fadhaa/aws-s3-with-cloudfront-distribution-setup/blob/main/docs/s3-setup-guide.md)
+
+
+---
+####  You also need to create TLS certificate
+1. Go to **AWS Certificate Manager (ACM)**
+2. Click **Request**
+3. Under **Certificate type**, select **Request a public certificate** and then click **Next**
+4. In **Fully qualified domain name**, enter your domain name. In my case, it's **mystatsolve.click**
+5. Leave all other settings as default and click **Request**
+6. Go to **Certificates** and click on the certificate that has your domain name.
+7. In the **Domains**, click **Create records in Route 53** and then click **Create records** to add CNAME of your certificate in your Route 53.
+8. Wait untill the validation completing and proceed to setup your cloudfront distribution
+
+
 
 ---
 
