@@ -75,6 +75,13 @@ This guide walks you through setting up an Amazon S3 bucket directly from the AW
 3. Choose the files **index.html** and **error.html** from your directory
 4. Click **Upload**
    - You can use the index, error files in the **main/scripts** in this repo.
+  
+### 4️⃣ Go to **Objects**
+1. Click on **index.html**
+2. Under **Object URL** click on https://s3.us-east-1.amazonaws.com/statsolve.click/index.html
+   - If the browser displays the content of your index.html file, then everything is set up correctly.
+   - Also check out the url of your error.html file
 
+### if everything is OK, the you can now CloudFront Distribution to setup your official website. check the file **cloudfront-https-setup.md**
 
 
