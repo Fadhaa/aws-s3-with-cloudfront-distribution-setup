@@ -52,8 +52,8 @@ Make sure:
 7. Skip everything else and click **Create distribution**
 8. After creating the distribution **statsolvedist**
 9. Under General (settings), click **Edit**
-10. Under **Domains** enter your domain name. In this example my domain is **mystatsolve.click** and click next
-11. Choose your **TLS certificate **. If you have not created one yet, go to **AWS ACM** and create one for your domain. Make sure you publish cname record in your route 53.
+10. Under **Alternate domain name (CNAME) - optional**, click **Add item** to enter your **domain name**. In this example my domain is **mystatsolve.click**.
+11. In **Custom SSL certificate - optional**, choose the certificate you created above.
 12. In **Default root object - optional** enter **index.html**
 13. After choosing your TLS, click **Next** and then **Add Domains**
 14. In **General** tap of your distribution and under **Settings**, click **Route domains to CloudFront**
