@@ -63,7 +63,8 @@ Make sure:
 
 ### 3️⃣ Test the HTTPS Site
 
-Once your distribution status = **Deployed**, open your browser and https://www.statsolve.com : 
+Once your distribution status = **Deployed**, open your browser and check out your website. in my case, my website is https://mystatsolve.com : 
+
 
 
 
