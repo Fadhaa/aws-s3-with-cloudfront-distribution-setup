@@ -66,13 +66,12 @@ Make sure:
 Once your distribution status = **Deployed**, open your browser and check out your website. in my case, my website is https://mystatsolve.com : 
 
 
-
-
 ---
 
 ## 🔐 Security Notes
 
 - CloudFront with **S3 website endpoint** cannot use Origin Access Control (OAC). If you want private buckets, you must use the **S3 REST endpoint** with OAC.
+- If you encounter any access issues, create an Origin Access Control (OAC) for your CloudFront distribution.
 - Attach **AWS WAF** for DDoS protection or IP filtering (see next guide).
 
 ---
