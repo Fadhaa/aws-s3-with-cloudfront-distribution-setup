@@ -55,7 +55,7 @@ Make sure:
 10. Under **Alternate domain name (CNAME) - optional**, click **Add item** to enter your **domain name**. In this example my domain is **mystatsolve.click**.
 11. In **Custom SSL certificate - optional**, choose the certificate you created above.
 12. In **Default root object - optional** enter **index.html**
-13. After choosing your TLS, click **Next** and then **Add Domains**
+13. At the bottom, click **Save changes**.
 14. In **General** tap of your distribution and under **Settings**, click **Route domains to CloudFront**
 15. You need to **Set up DNS routing**. just click on **Set up routing automatically** to add two records in your route 53.
 
@@ -63,9 +63,9 @@ Make sure:
 
 ### 3️⃣ Test the HTTPS Site
 
-Once your distribution status = **Deployed**, open the CloudFront domain: 
+Once your distribution status = **Deployed**, open your browser and https://www.statsolve.com : 
 
-https://www.statsolve.com
+
 
 ---
 
