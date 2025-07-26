@@ -61,7 +61,7 @@ This guide walks you through setting up an Amazon S3 bucket directly from the AW
     ]
 }
 
----
+```
 
 2. click on **Save Changes**
 
