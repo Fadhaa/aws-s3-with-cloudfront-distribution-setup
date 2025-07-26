@@ -1,5 +1,5 @@
 
-# 🚀 Setup CloudFront with HTTPS for S3 Static Website
+# 🚀 Setup CloudFront with HTTPS for S3 Static Website (Updated 26 July 2025).
 
 This guide explains how to deliver your S3-hosted static website securely using **CloudFront with HTTPS**.
 Let's supposed that you created bucket name **statsolve-s3** and the Domain name is **mystatsolve.click**.
