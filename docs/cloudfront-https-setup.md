@@ -52,7 +52,7 @@ Make sure:
 7. Skip everything else and click **Create distribution**
 8. After creating the distribution **statsolvedist**
 9. Under General (settings), click **Edit**
-10. Under **Alternate domain name (CNAME) - optional**, click **Add item** to enter your **domain name**. In this example my domain is **mystatsolve.click**.
+10. Under **Alternate domain name (CNAME) - optional**, click **Add item** to enter your **domain name**. In this example my domain is **statsolve.click**.
 11. In **Custom SSL certificate - optional**, choose the certificate you created above.
 12. In **Default root object - optional** enter **index.html**
 13. At the bottom, click **Save changes**.
