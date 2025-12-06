@@ -2,7 +2,7 @@
 # 🚀 Setup CloudFront with HTTPS for S3 Static Website (Updated 26 July 2025).
 
 This guide explains how to deliver your S3-hosted static website securely using **CloudFront with HTTPS**.
-Let's supposed that you created bucket name **statsolve-s3** and the Domain name is **mystatsolve.click**.
+Let's supposed that you created bucket name **statsolve-s3** and the Domain name is **mydomain.com**.
 
 ---
 
@@ -11,7 +11,7 @@ Let's supposed that you created bucket name **statsolve-s3** and the Domain name
 - Adds **HTTPS support** (S3 static sites support only HTTP natively)
 - Improves **performance** with global CDN caching
 - Adds **security** options (signed URLs, WAF, rate limiting)
-- Can connect to a **custom domain** (like `www.statsolve.com`)
+- Can connect to a **custom domain** (like `www.mydomain.com`)
 
 ---
 
@@ -22,7 +22,7 @@ Make sure:
 - **Static website hosting is enabled**
 - Your files (e.g., `index.html`) are **publicly readable**
 - You can access the **S3 Website Endpoint** (e.g., `http://YOUR-Bucket-NAME.s3-website-us-east-1.amazonaws.com`)
-- In my example the **YOUR-Bucket-NAME** is **statsolve.click**
+- In my example the **YOUR-Bucket-NAME** is **mydomain.com**
 - For setting S3 bucket, follow this guidance (https://github.com/Fadhaa/aws-s3-with-cloudfront-distribution-setup/blob/main/docs/s3-setup-guide.md)
 
 
@@ -31,7 +31,7 @@ Make sure:
 1. Go to **AWS Certificate Manager (ACM)**
 2. Click **Request**
 3. Under **Certificate type**, select **Request a public certificate** and then click **Next**
-4. In **Fully qualified domain name**, enter your domain name. In my case, it's **mystatsolve.click**
+4. In **Fully qualified domain name**, enter your domain name. In my case, it's **mydomain.com**
 5. Leave all other settings as default and click **Request**
 6. Go to **Certificates** and click on the certificate that has your domain name.
 7. In the **Domains**, click **Create records in Route 53** and then click **Create records** to add CNAME of your certificate in your Route 53.
@@ -63,7 +63,7 @@ Make sure:
 
 ### 3️⃣ Test the HTTPS Site
 
-Once your distribution status = **Deployed**, open your browser and check out your website. in my case, my website is https://statsolve.click : 
+Once your distribution status = **Deployed**, open your browser and check out your website. in my case, my website is https://mydomain.comk : 
 
 
 ---
