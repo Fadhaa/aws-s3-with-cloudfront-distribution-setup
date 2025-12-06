@@ -21,7 +21,7 @@ This guide walks you through setting up an Amazon S3 bucket directly from the AW
 4. Fill in:
    - **AWS Region** (choose closest to your target audience)
    - **Bucket type** (choose General purpose)
-   - **Bucket name** (must be globally unique). In this example, let's choose **statsolve.click**
+   - **Bucket name** (must be globally unique). In this example, let's choose **mydomain.com**
 5. If you have previous bucket, you can Copy settings from existing bucket - optional. otherwise continue to set new one
    
 6. Leave "Object Ownership" as **ACLs disabled** (recommended).
@@ -58,7 +58,7 @@ This guide walks you through setting up an Amazon S3 bucket directly from the AW
             "Effect": "Allow",
             "Principal": "*",
             "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::statsolve.click/*"
+            "Resource": "arn:aws:s3:::mydomain.com/*"
         }
     ]
 }
@@ -78,7 +78,7 @@ This guide walks you through setting up an Amazon S3 bucket directly from the AW
   
 ### 4️⃣ Go to **Objects**
 1. Click on **index.html**
-2. Under **Object URL** click on https://s3.us-east-1.amazonaws.com/statsolve.click/index.html
+2. Under **Object URL** click on https://s3.us-east-1.amazonaws.com/mydomain.com/index.html
    - If the browser displays the content of your index.html file, then everything is set up correctly.
    - Also check out the url of your error.html file
 
